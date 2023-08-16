@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamSample.Views.ViewProductDetails"
+             Title="{Binding SelectedProduct.ProductName}">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5"
+                     Spacing="5">
+
+            <Image x:Name="imgProduct" WidthRequest="200" HeightRequest="200">
+                <Image.Source>
+                    <UriImageSource Uri="{Binding SelectedProduct.ProductImage}"
+                                    CacheValidity="2"
+                                    CachingEnabled="True"></UriImageSource>
+                </Image.Source>
+            </Image>
+            <StackLayout Orientation="Vertical" Padding="15">
+                <Label x:Name="lblProductName" Text="{Binding SelectedProduct.ProductName}" FontSize="20" FontAttributes="Bold"/>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                <Label Text="by" TextColor="Gray"/>
+                    <Label x:Name="lblCompany" Text="{Binding SelectedProduct.ProductCompany}" TextColor="Gray"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+                    <Label x:Name="lblRatings" Text="{Binding SelectedProduct.ProductRating}" TextColor="#3483eb"/>
+                <Label Text="/5"  TextColor="#3483eb"/>
+            </StackLayout>
+                <Label x:Name="lblPrice" Text="{Binding SelectedProduct.ProductPrice}"  TextColor="#eb3443"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
